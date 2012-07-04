@@ -1,14 +1,14 @@
 $(document).ready(function() {
 	initialize();
 
-	function initialize(){
+	function initialize() {
 		$('#slideshow').prependTo($('body'));
 		$('#slideshow li').hide();
 		create_preview_pane();
 		display($('#slideshow li').first(), 1);
 	}
 
-	function display(slide, slide_counter){
+	function display(slide, slide_counter) {
 		update_preview_panel(slide_counter);
 		slide.fadeIn(1000).delay(1000).fadeOut(1000).queue(function(){
 			slide.hide();
