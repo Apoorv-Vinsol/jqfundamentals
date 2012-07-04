@@ -30,7 +30,7 @@ $(document).ready(function() {
 	}
 
 	function create_preview_pane() {
-		$('<div id="thumbnail-preview" style="width:100%;height:100px;"></div>').insertAfter($('#slideshow'));
+		$('<div id="thumbnail-preview" style="width:100%;height:100px;margin-bottom:70px;"></div>').insertAfter($('#slideshow'));
 		$('<ul id="thumbnail-list" style="list-style:none;"></ul>').appendTo('#thumbnail-preview');
 		$('#slideshow img').each(function() {
 			image = $(this).clone().css({width:100,height:100})
