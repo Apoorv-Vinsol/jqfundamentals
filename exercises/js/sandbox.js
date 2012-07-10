@@ -30,20 +30,23 @@ $(document).ready(function(){
 
 		console.log($('#specials select').parents('form').find('input[type="submit"]'));
 
-		$('#slideshow li:first').addClass('current').siblings().addClass('disabled');		
+		console.log($('#slideshow li:first').addClass('current').siblings().addClass('disabled'));
 	}
 	
 	function manipulating_exercise(){
-		$('#myList').append("<li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li>");
+		$.each(Array(50), function(i){
+			$('#myList').append("<li>" + (i + 1) + "</li>");
+		});
 
-		$('#myList li:nth-child(odd)').remove();		
+		$('#myList li:odd').remove();		
 
 		$('div.module:last').append('<h2></h2><p></p>');
 
 		$('body').find('select').append('<option>Monday</option>');
 
-		$('div.module').parent().append('<div class"module"></div>').find('div.module:last').append($('img')[0]);		
+		$('div.module').parent().append('<div class"module"></div>').find('div.module:last').append($('img').first().clone());		
 	}
 	
-	traversing_exercise();
+	traversing_exercise();	
+	manipulating_exercise();
 });
