@@ -18,19 +18,17 @@ $(document).ready(function(){
 	}
 
 	function traversing_exercise(){
-		$('img[alt]').each(function(){
-			console.log(this.alt);
+		$('img').each(function(){
+			console.log($(this).attr('alt'));
 		});
 
-		console.log($('input[name="q"]').parent().addClass('myclass'));
+		console.log($('input[name="q"]').parents('form').addClass('myclass'));
 
 		console.log($('#myList[class="current"]').removeClass());
 
 		console.log($('#myList li[class*="current"]').removeClass().next().addClass('current'));
 
-		$('#specials select').parentsUntil('form').each(function(){
-			console.log($(this).find('input[type="submit"]'));
-		});
+		console.log($('#specials select').parents('form').find('input[type="submit"]'));
 
 		$('#slideshow li:first').addClass('current').siblings().addClass('disabled');		
 	}
@@ -46,5 +44,6 @@ $(document).ready(function(){
 
 		$('div.module').parent().append('<div class"module"></div>').find('div.module:last').append($('img')[0]);		
 	}
-
+	
+	traversing_exercise();
 });
